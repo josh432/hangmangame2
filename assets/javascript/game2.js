@@ -22,9 +22,19 @@ document.onkeyup = function(event) {
 			console.log(underscoreArray);
 		}
 	}
+
+		if(underscoreArray.indexOf(userLetterChoice) === -1) {
+			usedLetters.push(userLetterChoice);
+			lives -= 1;
+			console.log(usedLetters);
+			console.log(lives);
+		}
+
 		if(underscoreArray.indexOf("_") === -1) {
 			alert("You Win!");
 		}
+
+		
 }
 
 generatePuzzle();
