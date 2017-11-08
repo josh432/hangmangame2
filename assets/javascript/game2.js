@@ -7,19 +7,24 @@ var underscoreArray = [];
 var wins = 0;
 var losses = 0;
 //var keyLock = false;
-
-
-
+generatePuzzle();
 
 
 document.onkeyup = function(event) {
 	var userLetterChoice = event.key.toLowerCase();
-	console.log(userLetterChoice);
+	console.log(userLetterChoice)
+
+
+
+
+
+
 
 	for (i = 0; i < computerWordChoice.length; i++) {
 		if (computerWordChoice.charAt(i) === userLetterChoice) { 
             underscoreArray[i] = userLetterChoice;
 			console.log(underscoreArray);
+			updateAreas();
 		}
 	}
 
@@ -28,6 +33,7 @@ document.onkeyup = function(event) {
 			lives -= 1;
 			console.log(usedLetters);
 			console.log(lives);
+			updateAreas();
 		}
 
 		if(underscoreArray.indexOf("_") === -1) {
@@ -43,9 +49,9 @@ document.onkeyup = function(event) {
 		}
 
 		
-}
+};
 
-generatePuzzle();
+
 console.log(computerWordChoice);
 console.log(underscoreArray);
 
@@ -59,18 +65,13 @@ function generatePuzzle() {
     }
 };
 
-function updateAreas() {
-	var underscoreString = underscoreArray.join(" ");
-	document.getElementById("underscores").innerHTML = underscoreString;
-	document.getElementById("usedLetters").innerHTML = "Guessed Letters: " + usedLetters.join(" ");
-	document.getElementById("lives").innerHTML = "Guesses Remaining: " + lives;
-	document.getElementById("wins").innerHTML = "Total Won: " + wins;
-	document.getElementById("losses").innerHTML = "Total Lost: " + losses;
-
-
-}
-
-
+ function updateStats() {
+    var underscoreString = underscoreArray.join(" "); 
+    document.getElementById("underScores").innerHTML = underscoreString;
+    document.getElementById("usedLetters").innerHTML = "Guessed Letters: " + usedLetters.join(" ");
+	document.getElementById("wins").innerHTML = "Wins: " + wins;
+    document.getElementById("losses").innerHTML = "Losses: " + losses;
+ };
 
 
 
