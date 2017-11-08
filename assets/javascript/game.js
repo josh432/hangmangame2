@@ -68,13 +68,13 @@ document.onkeyup = function(event) {
 		++wins;
 		document.getElementById('gamesWon').innerHTML = wins;
 
-	};
+	}
 	//else, if there are no more guesses left, user loses game, update loss area.
 	} else if (guessesLeft <= 1) {
 		alert('You lose!');
 		++losses;
 		document.getElementById('gamesLost').innerHTML = losses;
-	};
+	}
 
 	//If letter isn't present, push letter to letters guessed area & reduce guesses left.
 	wrongWord.push(userGuess);
@@ -82,7 +82,7 @@ document.onkeyup = function(event) {
 	console.log(wrongWord);
 	guessesLeft--;
 	document.getElementById('numGuesses').innerHTML = guessesLeft;
-	};
+	}
 
 
 
@@ -94,9 +94,9 @@ function createDash() {
 	for (var i = 0; i < chosenWord.length; i++){
 		underScore.push('_');
 
-	};
+	}
 	return underScore;
-};
+}
 
 function resetGame() {
 	randomNumber = Math.floor(Math.random() * words.length);
