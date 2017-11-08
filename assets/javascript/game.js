@@ -103,9 +103,7 @@ function resetGame() {
 	chosenWord = words[randomNumber];
 	underScoreArea.innerHTML = createDash().join(' ');
 	guessesLeft = 20;
-
-<<<<<<< HEAD
-
+}
 
 
 
@@ -113,7 +111,5 @@ function resetGame() {
 
 
 
-=======
-	console.log(chosenWord);
-};
->>>>>>> 96c15a436124b077ac57f684e8297b108d0943c9
+
+
