@@ -32,10 +32,14 @@ document.onkeyup = function(event) {
 
 		if(underscoreArray.indexOf("_") === -1) {
 			alert("You Win!");
+			++wins;
+			console.log(wins);
 		}
 
 		if (lives == 0) {
 			alert("Game Over!");
+			++losses;
+			console.log(losses);
 		}
 
 		
@@ -55,8 +59,16 @@ function generatePuzzle() {
     }
 };
 
+function updateAreas() {
+	var underscoreString = underscoreArray.join(" ");
+	document.getElementById("underscores").innerHTML = underscoreString;
+	document.getElementById("usedLetters").innerHTML = "Guessed Letters: " + usedLetters.join(" ");
+	document.getElementById("lives").innerHTML = "Guesses Remaining: " + lives;
+	document.getElementById("wins").innerHTML = "Total Won: " + wins;
+	document.getElementById("losses").innerHTML = "Total Lost: " + losses;
 
 
+}
 
 
 
