@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<html lang = en>
+<meta charset="UTF-8">
+<title>Hangman Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+<link href="https://fonts.googleapis.com/css?family=Sofadi+One|Ubuntu" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+
+<body>
+	<main class="container">
+		<div class="jumbotron text-center">
+			<h1>Jungle Safari Hangman</h1>
+			<h3>Guess the Animal!</h3>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="panel-heading">
+			<h3 class="panel-title">Word to Guess</h3>
+		</div>
+		<div class="panel-body">
+			<h1 id="wordToGuess"></h1>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<p>Guesses Left:</p> <span id="numGuesses"></span>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+		<p>Letters Guessed:</p> <span id="letterGuessedWrong"></span>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+		<p>Wins:</p> <span id="gamesWon"></span>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+		<p>Losses:</p> <span id="gamesLost"></span>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+		<p>Message<p> <span id="message"></span>
+		</div>
+	</div>
+
+	<button type="button" class="btn btn-primary" onclick="resetGame()">New Game</button>
+
+	
+
+</main>
+<script type="text/javascript" src="./assets/javascript/game.js"></script>
+</body>
+</html>

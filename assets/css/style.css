@@ -1,0 +1,35 @@
+/*Style.css*/
+html,
+body,
+header,
+{
+    
+    height: 100%;
+}
+
+h1 {
+	font-family: 'Sofadi One', cursive;
+}
+
+
+h3, p {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+	background: url("../images/jungle.jpeg") no-repeat;
+	background-size: cover;
+
+
+}
+
+span {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1em;
+
+}
+
+.jumbotron {
+	background-color: rgba(150,150,150,0.85); 
+}
+
