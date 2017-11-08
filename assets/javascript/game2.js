@@ -40,12 +40,14 @@ document.onkeyup = function(event) {
 			alert("You Win!");
 			++wins;
 			console.log(wins);
+			document.getElementById("wins").innerHTML = wins;
 		}
 
 		if (lives == 0) {
 			alert("Game Over!");
 			++losses;
 			console.log(losses);
+			
 		}
 
 		
@@ -65,12 +67,12 @@ function generatePuzzle() {
     }
 };
 
- function updateStats() {
-    var underscoreString = underscoreArray.join(" "); 
+ function updateAreas() {
     document.getElementById("underScores").innerHTML = underscoreString;
     document.getElementById("usedLetters").innerHTML = "Guessed Letters: " + usedLetters.join(" ");
-	document.getElementById("wins").innerHTML = "Wins: " + wins;
+	document.getElementById("wins").innerHTML = wins;
     document.getElementById("losses").innerHTML = "Losses: " + losses;
+   document.getElementById("lives").innerHTML = "Guesses Remaining: " + lives;
  };
 
 
