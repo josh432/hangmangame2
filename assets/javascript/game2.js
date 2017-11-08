@@ -22,7 +22,9 @@ document.onkeyup = function(event) {
 			console.log(underscoreArray);
 		}
 	}
-	
+		if(underscoreArray.indexOf("_") === -1) {
+			alert("You Win!");
+		}
 }
 
 generatePuzzle();
