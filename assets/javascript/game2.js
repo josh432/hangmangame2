@@ -6,7 +6,7 @@ var computerWordChoice = wordArray[Math.floor(Math.random() * wordArray.length)]
 var underscoreArray = [];
 var wins = 0;
 var losses = 0;
-var keyLock = false;
+//var keyLock = false;
 
 
 
@@ -32,6 +32,10 @@ document.onkeyup = function(event) {
 
 		if(underscoreArray.indexOf("_") === -1) {
 			alert("You Win!");
+		}
+
+		if (lives == 0) {
+			alert("Game Over!");
 		}
 
 		
