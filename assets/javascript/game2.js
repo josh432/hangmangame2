@@ -7,8 +7,8 @@ var underscoreArray = [];
 var wins = 0;
 var losses = 0;
 
-generatePuzzle();
-
+//generatePuzzle();
+document.getElementById('underscores').innerHTML = generatePuzzle().join(' '); //this was added from version one, doesn't fill(!).
 
 document.onkeyup = function(event) {
 	var userLetterChoice = event.key.toLowerCase();
@@ -27,6 +27,7 @@ document.onkeyup = function(event) {
 			console.log(underscoreArray);
 			//updateAreas();
 		}
+
 	}
 
 		if(underscoreArray.indexOf(userLetterChoice) === -1) {
@@ -65,6 +66,7 @@ function generatePuzzle() {
     for (i = 0; i < computerWordChoice.length; i++) { //creates array of underscores so I can pull their index to match with correct letters
         underscoreArray.push("_");
     }
+    return underscoreArray; //this was added to generate underscores
 };
 
  //function updateAreas() {
