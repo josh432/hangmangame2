@@ -68,6 +68,10 @@ document.onkeyup = function(event) {
 			updateAreas();
 			//document.getElementById("losses").innerHTML = losses;//this is the only html area which works!
 			alert("Game Over!");
+		} 
+
+			else if (alphabet.indexOf(userLetterChoice) === -1) {
+			alert("You need to enter a letter");
 		}
 
 	}	
