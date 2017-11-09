@@ -6,10 +6,24 @@ var computerWordChoice = wordArray[Math.floor(Math.random() * wordArray.length)]
 var underscoreArray = [];
 var wins = 0;
 var losses = 0;
-//updateAreas(); cannot get this function to work properly.
+
+
+
+
+
+
+
+//updateAreas(); cannot get this function to work properly. 
 //generatePuzzle(); this works but doesn't render to HTML
+document.getElementById("message").innerHTML = "Press any key to get started";// this html code works! but want this in a function.
+document.getElementById("lives").innerHTML = lives;
+document.getElementById("wins").innerHTML = wins;
+document.getElementById("losses").innerHTML = losses;
+//document.getElementById("usedLetters").innerHTML = usedLetters <- this doesn't work
 document.getElementById('underscores').innerHTML = generatePuzzle().join(' '); //this was added from version one, doesn't fill(!).
 //cannot get the letters to render in HTML. Only the console version works.
+
+
 document.onkeyup = function(event) {
 	var userLetterChoice = event.key.toLowerCase();
 	console.log(userLetterChoice)
@@ -28,17 +42,19 @@ document.onkeyup = function(event) {
 			//updateAreas(); want this function to work!!
 		}
 
-	}
+	} 
+	//trying to use nested if statement logic here:
 
 		if(underscoreArray.indexOf(userLetterChoice) === -1) {
 			usedLetters.push(userLetterChoice);
 			lives -= 1;
 			console.log(usedLetters);
 			console.log(lives);
-			//updateAreas(); want this function to work!!
+			//updateAreas(); want this function to work!! 
+			document.getElementById("lives").innerHTML = lives; // this seems to be counting down ok.
 		}
 
-		if(underscoreArray.indexOf("_") === -1) {
+		if (underscoreArray.indexOf("_") === -1) {
 			alert("You Win!");
 			++wins;
 			console.log(wins);
@@ -86,7 +102,6 @@ function generatePuzzle() {
 //    usedLetters = [];
 //    underscoreArray = [];
 //    underscoreString = "";
-//    keyLock = false; //unlocks keyboard
 //    lives = 10;
 //    generatePuzzle();
 //    updateStats();
