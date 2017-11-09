@@ -6,7 +6,7 @@ var computerWordChoice = wordArray[Math.floor(Math.random() * wordArray.length)]
 var underscoreArray = [];
 var wins = 0;
 var losses = 0;
-//var keyLock = false;
+
 generatePuzzle();
 
 
@@ -20,11 +20,12 @@ document.onkeyup = function(event) {
 
 
 
+
 	for (i = 0; i < computerWordChoice.length; i++) {
 		if (computerWordChoice.charAt(i) === userLetterChoice) { 
             underscoreArray[i] = userLetterChoice;
 			console.log(underscoreArray);
-			updateAreas();
+			//updateAreas();
 		}
 	}
 
@@ -33,7 +34,7 @@ document.onkeyup = function(event) {
 			lives -= 1;
 			console.log(usedLetters);
 			console.log(lives);
-			updateAreas();
+			//updateAreas();
 		}
 
 		if(underscoreArray.indexOf("_") === -1) {
@@ -47,7 +48,7 @@ document.onkeyup = function(event) {
 			alert("Game Over!");
 			++losses;
 			console.log(losses);
-			
+			document.getElementById("losses").innerHTML = losses;
 		}
 
 		
@@ -59,7 +60,6 @@ console.log(underscoreArray);
 
 
 
-
 function generatePuzzle() {
     computerWordChoice = wordArray[Math.floor(Math.random() * wordArray.length)]; //computer selects a random word
     for (i = 0; i < computerWordChoice.length; i++) { //creates array of underscores so I can pull their index to match with correct letters
@@ -67,13 +67,14 @@ function generatePuzzle() {
     }
 };
 
- function updateAreas() {
-    document.getElementById("underScores").innerHTML = underscoreString;
-    document.getElementById("usedLetters").innerHTML = "Guessed Letters: " + usedLetters.join(" ");
-	document.getElementById("wins").innerHTML = wins;
-    document.getElementById("losses").innerHTML = "Losses: " + losses;
-   document.getElementById("lives").innerHTML = "Guesses Remaining: " + lives;
- };
+ //function updateAreas() {
+ //	var underscoreString = underscoreArray.join(" ");
+  //  document.getElementById("underScores").innerHTML = underscoreString;
+  //  document.getElementById("usedLetters").innerHTML = "Guessed Letters: " + usedLetters.join(" ");
+	//document.getElementById("wins").innerHTML = wins;
+   // document.getElementById("losses").innerHTML = losses;
+  // document.getElementById("lives").innerHTML = "Guesses Remaining: " + lives;
+//};
 
 
 
