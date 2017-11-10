@@ -10,58 +10,62 @@
 <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 
+
+
 <body>
-	<main class="container">
-		<div class="jumbotron text-center">
-			<h1>Jungle Safari Hangman</h1>
-			<h3>Guess the Animal!</h3>
-		</div>
+    <main class="container">
+        <div class="jumbotron text-center">
+            <h1>Planet Hangman</h1>
+            <h3>Guess the Planet!</h3>
+        </div>
 
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<div class="panel-heading">
-			<h3 class="panel-title">Word to Guess</h3>
-		</div>
-		<div class="panel-body">
-			<h1 id="wordToGuess"></h1>
-		</div>
-	</div>
+        <div class="panel panel-default text-center col-md-3">
+            <div class="panel-heading">
+                <div class="panel-heading">
+            <h3 class="panel-title">Planet to Guess</h3>
+        </div>
+        <div class="panel-body">
+            <h1 id="underscores"></h1>
+        </div>
+    </div>
 
-	<div class="panel panel-default">
-		<div class="panel-body">
-			<p>Guesses Left:</p> <span id="numGuesses"></span>
-		</div>
-	</div>
+    <div class="panel panel-default">
+        <div class="panel-body"> 
+      <p>Message:<p> <span id="message" style="color: red;"></span>
+        </div> 
+    </div>
 
-	<div class="panel panel-default">
-		<div class="panel-body">
-		<p>Letters Guessed:</p> <span id="letterGuessedWrong"></span>
-		</div>
-	</div>
 
-	<div class="panel panel-default">
-		<div class="panel-body">
-		<p>Wins:</p> <span id="gamesWon"></span>
-		</div>
-	</div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p>Guesses Left:</p> <span id="lives"></span>
+        </div>
+    </div>
 
-	<div class="panel panel-default">
-		<div class="panel-body">
-		<p>Losses:</p> <span id="gamesLost"></span>
-		</div>
-	</div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+        <p>Letters Guessed:</p> <span id="usedLetters"></span>
+        </div>
+    </div>
 
-	<div class="panel panel-default">
-		<div class="panel-body">
-		<p>Message<p> <span id="message"></span>
-		</div>
-	</div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+        <p>Wins:</p> <span id="wins"></span>
+        </div>
+    </div>
 
-	<button type="button" class="btn btn-primary" onclick="resetGame()">New Game</button>
+    <div class="panel panel-default">
+        <div class="panel-body">
+        <p>Losses:</p> <span id="losses"></span>
+        </div>
+    </div>
 
-	
+   
+    <button type="button" class="btn btn-primary" onclick="resetGame()">New Game</button>
+
+    
 
 </main>
-<script type="text/javascript" src="./assets/javascript/game.js"></script>
+<script type="text/javascript" src="./assets/javascript/game2.js"></script>
 </body>
 </html>
