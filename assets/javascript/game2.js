@@ -18,7 +18,7 @@ var losses = 0;
 
 //updateAreas();  
 //generatePuzzle(); 
-document.getElementById("message").innerHTML = "Press any key to get started";
+document.getElementById("message").innerHTML = "Press any key to get started.";
 document.getElementById("lives").innerHTML = lives;
 document.getElementById("wins").innerHTML = wins;
 document.getElementById("losses").innerHTML = losses;
@@ -42,6 +42,7 @@ document.onkeyup = function(event) {
 				underscoreArray[i] = userLetterChoice;
 				console.log(underscoreArray);
 				updateAreas();
+
 			}
 
 		} 
@@ -79,7 +80,7 @@ document.onkeyup = function(event) {
 }; 
 
 
-  //Need this line of code to complete game logic, but the console rejects it (else and else/if):
+  //Duplicate letter bug. Need this line of code to complete game logic, but the console rejects it (else and else/if):
   //else if (else???) (usedLetters.indexOf(userLetterChoice) != -1 || underscoreArray.indexOf(userLetterChoice) != -1) { 
    //    alert("You've already used that letter");
   
@@ -95,7 +96,7 @@ function generatePuzzle() {
     for (i = 0; i < computerWordChoice.length; i++) { //creates array of underscores so I can pull their index to match with correct letters
         underscoreArray.push("_");
     }
-    return underscoreArray; //this was added to generate underscores, shouldn't need this if updateArea() was working!
+    return underscoreArray; 
 };
 
  function updateAreas() {
@@ -117,4 +118,8 @@ function resetGame() {
    updateAreas();
 
 };
-//this is for the reset button at the bottom. this will reset the page without disturbing the wins/losses area.
+
+function message() {
+	document.getElementById("message").innerHTML = "Press any key to continue."
+}
+//this is for the continue button at the bottom. this will simply message user to continue without disturbing the wins/losses area.
