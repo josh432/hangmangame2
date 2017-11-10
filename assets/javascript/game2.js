@@ -1,3 +1,6 @@
+//Planet Hangman Game
+
+//Global Variables:
 var usedLetters = []; 
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split(''); 
 var lives = 10; 
@@ -15,13 +18,11 @@ var losses = 0;
 
 //updateAreas();  
 //generatePuzzle(); 
-document.getElementById("message").innerHTML = "Press any key to get started";// this html code works! but want this in a function.
+document.getElementById("message").innerHTML = "Press any key to get started";
 document.getElementById("lives").innerHTML = lives;
 document.getElementById("wins").innerHTML = wins;
 document.getElementById("losses").innerHTML = losses;
-//document.getElementById("usedLetters").innerHTML = usedLetters <- this doesn't work
-document.getElementById('underscores').innerHTML = generatePuzzle().join(' '); //this was added from version one, doesn't fill(!).
-//cannot get the letters to render in HTML. Only the console version works.
+document.getElementById('underscores').innerHTML = generatePuzzle().join(' '); 
 
 
 document.onkeyup = function(event) {
@@ -40,7 +41,7 @@ document.onkeyup = function(event) {
 			if (computerWordChoice.charAt(i) === userLetterChoice) { 
 				underscoreArray[i] = userLetterChoice;
 				console.log(underscoreArray);
-				updateAreas(); //want this function to work!!
+				updateAreas();
 			}
 
 		} 
@@ -50,35 +51,38 @@ document.onkeyup = function(event) {
 			lives -= 1;
 			console.log(usedLetters);
 			console.log(lives);
-			updateAreas(); //want this function to work!! 
-			//document.getElementById("lives").innerHTML = lives; // this seems to be counting down ok.
+			updateAreas(); 
 		}
 
 		if (underscoreArray.indexOf("_") === -1) {
 			++wins;
 			console.log(wins);
 			updateAreas();
-			//document.getElementById("wins").innerHTML = wins; //this is the only html area which works!
-			alert("You Win!");
+			document.getElementById("message").innerHTML = "You Win!";
+			resetGame();
 		}
+			
 
 		if (lives == 0) {
 			++losses;
 			console.log(losses);
 			updateAreas();
-			//document.getElementById("losses").innerHTML = losses;//this is the only html area which works!
-			alert("Game Over!");
+			document.getElementById("message").innerHTML = "You Lose!";
+			resetGame();
 		} 
 
 			else if (alphabet.indexOf(userLetterChoice) === -1) {
-			alert("You need to enter a letter");
+			document.getElementById("message").innerHTML = "Please Enter a Letter.";
 		}
 
 	}	
-}; //need to format 2 else if statements. 1) if input is not a letter, alert user to enter a letter and 2) if letter
-  //has been input twice, alert user to pick a different letter. 
+}; 
 
-  //else if the above to else statements are false, the game commences. Not sure how to format these.
+
+  //Need this line of code to complete game logic, but the console rejects it (else and else/if):
+  //else if (else???) (usedLetters.indexOf(userLetterChoice) != -1 || underscoreArray.indexOf(userLetterChoice) != -1) { 
+   //    alert("You've already used that letter");
+  
 
 
 console.log(underscoreArray);
@@ -111,5 +115,6 @@ function resetGame() {
    lives = 10;
    generatePuzzle();
    updateAreas();
-}
+
+};
 //this is for the reset button at the bottom. this will reset the page without disturbing the wins/losses area.
